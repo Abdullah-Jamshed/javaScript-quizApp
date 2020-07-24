@@ -22,22 +22,63 @@ let questions = [
     },
     {
         question: "Question no 3",
-        answer: "option1c",
+        answer: "true",
         option: [
-            "option1c",
-            "option2c",
-            "option3c",
-            "option4c",
+            "true",
+            "false",
+            // "option3c",
+            // "option4c",
         ]
     }
 ]
 
 let quesNum = 0;
 let points = 0
+sessionStorage.setItem("points",points)
+
+
+let sec = 10;
+let min = 0;
+// let sec = 60;
+// let min = 4;
+var p = document.querySelector(".counter p");
+if (min !=0){
+    p.textContent = `${min+1} : 00`
+}else{
+    p.textContent = `0${min} : ${sec}`
+}
+
+function timer() {
+    var interval = setInterval(() => {
+        if (min == 0 && sec==0){
+            clearInterval(interval)
+            sessionStorage.setItem("timeOut",true)
+            sessionStorage.setItem("timeS",sec)
+            sessionStorage.setItem("timeM",min)
+            location.href = "last.html"
+            return;
+        }
+        sec--;
+        if (sec == 0) {
+            sec = 00;
+            // min--
+        }else if(sec <0){
+            sec = 59;
+            min--
+        }
+        
+        var secs = (sec < 10) ? `0${sec}`:sec     
+        var mins = (min < 10) ? `0${min}`:min     
+        p.textContent = `${mins} : ${secs}` 
+
+    }, 1000)
+
+}
 
 var load = document.querySelector("body");
 load.onload = function () {
     quiz(quesNum)
+    timer()
 }
 
 function quiz(quesNum) {
@@ -45,7 +86,7 @@ function quiz(quesNum) {
 
     var qn = document.createElement("div")
     var p = document.createElement("p")
-    p.innerHTML = `Question no ${quesNum+1} of ${questions.length}`
+    p.innerHTML = `Question ${quesNum + 1} of ${questions.length}`
     qn.classList.add("qn");
     qn.appendChild(p);
     quesCont.appendChild(qn)
@@ -108,8 +149,11 @@ subBtn.addEventListener("click", (e) => {
                     }
                 }
             })
+            sessionStorage.setItem("timeOut",false)
+            sessionStorage.setItem("timeS",sec)
+            sessionStorage.setItem("timeM",min)
 
-            location.href = "index.html"
+            location.href = "last.html"
             return;
         }
 
