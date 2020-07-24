@@ -1,3 +1,4 @@
+// questions Array
 let questions = [
     {
         question: "Q1 CPU Stands for ?",
@@ -45,7 +46,7 @@ let questions = [
     }
 ]
 
-
+// declaring variable for question count and points 
 let quesNum = 0;
 let points = 0
 sessionStorage.setItem("points",points)
@@ -54,7 +55,7 @@ sessionStorage.setItem("points",points)
 // let sec = 10;
 // let min = 0;
 
-
+// counter time set
 let sec = 60;
 let min = 4;
 var p = document.querySelector(".counter p");
@@ -90,12 +91,14 @@ function timer() {
 
 }
 
+// calling funtion onload
 var load = document.querySelector("body");
 load.onload = function () {
     quiz(quesNum)
     timer()
 }
 
+// creating quiz HTML 
 function quiz(quesNum) {
     var quesCont = document.querySelector(".question-cont");
 
@@ -148,7 +151,7 @@ function quiz(quesNum) {
 }
 
 
-
+// Submit button funtion
 var subBtn = document.querySelector(".question-cont");
 subBtn.addEventListener("click", (e) => {
     if (e.target.classList.contains("btnS")) {

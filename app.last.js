@@ -5,9 +5,8 @@ window.onload = function () {
 
 function result() {
 
+    // checking for time or not for timeOut Div
     let parent = document.querySelector(".mainCont");
-    // let a = sessionStorage.getItem("timeOut");
-    // console.log(a);
     if (sessionStorage.getItem("timeOut") === "true") {
         divTimeout = document.createElement("div");
         divTimeout.classList.add("timeout")
@@ -17,6 +16,7 @@ function result() {
         parent.appendChild(divTimeout)
     }
 
+    // checking for score for which icon to show
     let points = sessionStorage.getItem("points")
     if (points > 20){
         let divAward = document.createElement("div");
@@ -36,10 +36,9 @@ function result() {
         parent.appendChild(divAward)
     }
 
-
+    // creating HTML for Name and Score
     let h3 = document.createElement("h3");
     let name = sessionStorage.getItem("name")
-    // let points = sessionStorage.getItem("points")
     if (points > 10) {
         h3.textContent = `Congratulations: ${name}`
     } else {
@@ -53,6 +52,7 @@ function result() {
 
 }
 
+//  Back to Home Button
 var home = document.querySelector(".home");
 home.addEventListener("click",(e)=>{
     sessionStorage.clear()
