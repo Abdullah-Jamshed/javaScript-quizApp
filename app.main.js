@@ -55,12 +55,12 @@ let points = 0
 sessionStorage.setItem("points",points)
 
 // // timeOut check 
-// let sec = 10;
-// let min = 0;
+let sec = 10;
+let min = 2;
 
 // counter time set
-let sec = 60;
-let min = 4;
+// let sec = 60;
+// let min = 4;
 var p = document.querySelector(".counter p");
 if (min !=0){
     p.textContent = `${min+1} : 00`
@@ -70,6 +70,8 @@ if (min !=0){
 
 function timer() {
     var interval = setInterval(() => {
+
+        
         if (min == 0 && sec==0){
             clearInterval(interval)
             sessionStorage.setItem("timeOut",true)
@@ -86,6 +88,11 @@ function timer() {
             min--
         }
         
+        if (min < 2){
+            var counterDiv = document.querySelector(".counter");
+            counterDiv.style.backgroundColor = "#bf0000"
+        }
+
         var secs = (sec < 10) ? `0${sec}`:sec     
         var mins = (min < 10) ? `0${min}`:min     
         p.textContent = `${mins} : ${secs}` 
