@@ -29,15 +29,17 @@ let questions = [
         ]
     },
     {
-        question: "Q4 Who is the father of Computer?",
-        answer: "Charles Babbage",
+        question: "Q4 WWW stands for?",
+        answer: "World Wide Web",
         option: [
-            "Charles Babbage",
-            "Augusta Adaming",
+            "World Whole Web",
+            "Wide World Web",
+            "Web World Wide",
+            "World Wide Web",
         ]
     },
     {
-        question: "Q5 Who is the father of Internet ??",
+        question: "Q5 Who is the father of Internet ?",
         answer: "Vint Cerf",
         option: [
             "Vint Cerf",
@@ -45,6 +47,7 @@ let questions = [
         ]
     }
 ]
+
 
 // declaring variable for question count and points 
 let quesNum = 0;
