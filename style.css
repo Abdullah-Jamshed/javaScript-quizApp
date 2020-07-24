@@ -103,16 +103,19 @@
     margin-bottom: 15px;
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 0px 3px 1px;
-    /* border: 2px solid black; */
+    border: 2px solid black; 
 } */
 
 .op{
     padding: 20px;
     margin-bottom: 15px;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0px 0px 3px 1px #52d4d46e;
+    box-shadow: 0px 0px 3px 1px #c2e2e2;
     border-bottom: 1.5px solid #48c4c7;
     border-radius: 5px;
+}
+.op:hover{
+    border-bottom: 1.5px solid #1b4747;
 }
 .op label{
     padding: 5px;
