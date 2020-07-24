@@ -1,36 +1,50 @@
-
 let questions = [
     {
-        question: "Question no 1",
-        answer: "option3a",
+        question: "Q1 CPU Stands for ?",
+        answer: "central processing unit",
         option: [
-            "option1a",
-            "option2a",
-            "option3a",
-            "option4a",
+            "central processing unit",
+            "central programming unit",
+            "central performance unit",
+            "central per unit",
         ]
     },
     {
-        question: "Question no 2",
-        answer: "option2b",
+        question: "Q2 The term 'Computer' is derived from ?",
+        answer: "latin",
         option: [
-            "option1b",
-            "option2b",
-            "option3b",
-            "option4b",
+            "latin",
+            "english",
+            "french",
+            "german",
         ]
     },
     {
-        question: "Question no 3",
-        answer: "true",
+        question: "Q3 Who is the father of Computer?",
+        answer: "Charles Babbage",
         option: [
-            "true",
-            "false",
-            // "option3c",
-            // "option4c",
+            "Charles Babbage",
+            "Augusta Adaming",
+        ]
+    },
+    {
+        question: "Q4 Who is the father of Computer?",
+        answer: "Charles Babbage",
+        option: [
+            "Charles Babbage",
+            "Augusta Adaming",
+        ]
+    },
+    {
+        question: "Q5 Who is the father of Internet ??",
+        answer: "Vint Cerf",
+        option: [
+            "Vint Cerf",
+            "Denis Riche",
         ]
     }
 ]
+
 
 let quesNum = 0;
 let points = 0
