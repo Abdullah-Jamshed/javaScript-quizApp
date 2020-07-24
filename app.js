@@ -36,11 +36,13 @@ let quesNum = 0;
 let points = 0
 sessionStorage.setItem("points",points)
 
+// // timeOut check 
+// let sec = 10;
+// let min = 0;
 
-let sec = 10;
-let min = 0;
-// let sec = 60;
-// let min = 4;
+
+let sec = 60;
+let min = 4;
 var p = document.querySelector(".counter p");
 if (min !=0){
     p.textContent = `${min+1} : 00`
@@ -61,7 +63,6 @@ function timer() {
         sec--;
         if (sec == 0) {
             sec = 00;
-            // min--
         }else if(sec <0){
             sec = 59;
             min--
