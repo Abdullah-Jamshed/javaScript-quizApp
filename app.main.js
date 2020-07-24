@@ -55,12 +55,12 @@ let points = 0
 sessionStorage.setItem("points",points)
 
 // // timeOut check 
-let sec = 10;
-let min = 2;
+// let sec = 10;
+// let min = 0;
 
 // counter time set
-// let sec = 60;
-// let min = 4;
+let sec = 60;
+let min = 4;
 var p = document.querySelector(".counter p");
 if (min !=0){
     p.textContent = `${min+1} : 00`
