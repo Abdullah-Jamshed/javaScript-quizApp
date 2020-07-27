@@ -48,54 +48,60 @@ let questions = [
     }
 ]
 
+sessionStorage.setItem("NumOfQuestion",questions.length)
+
+
+var arr = []
 
 // declaring variable for question count and points 
 let quesNum = 0;
 let points = 0
-sessionStorage.setItem("points",points)
+sessionStorage.setItem("points", points)
+attempt = 0 ;
+sessionStorage.setItem("attempt", attempt)
+
 
 // // timeOut check 
-// let sec = 10;
-// let min = 0;
+let sec = 10;
+let min = 0;
 
 // counter time set
-let sec = 60;
-let min = 4;
+// let sec = 60;
+// let min = 4;
 var p = document.querySelector(".counter p");
-if (min !=0){
-    p.textContent = `${min+1} : 00`
-}else{
+if (min != 0) {
+    p.textContent = `${min + 1} : 00`
+} else {
     p.textContent = `0${min} : ${sec}`
 }
 
 function timer() {
     var interval = setInterval(() => {
 
-        
-        if (min == 0 && sec==0){
+        if (min == 0 && sec == 0) {
             clearInterval(interval)
-            sessionStorage.setItem("timeOut",true)
-            sessionStorage.setItem("timeS",sec)
-            sessionStorage.setItem("timeM",min)
+            sessionStorage.setItem("timeOut", true)
+            sessionStorage.setItem("timeS", sec)
+            sessionStorage.setItem("timeM", min)
             location.href = "last.html"
             return;
         }
         sec--;
         if (sec == 0) {
             sec = 00;
-        }else if(sec <0){
+        } else if (sec < 0) {
             sec = 59;
             min--
         }
-        
-        if (min < 2){
+
+        if (min < 2) {
             var counterDiv = document.querySelector(".counter");
             counterDiv.style.backgroundColor = "#bf0000"
         }
 
-        var secs = (sec < 10) ? `0${sec}`:sec     
-        var mins = (min < 10) ? `0${min}`:min     
-        p.textContent = `${mins} : ${secs}` 
+        var secs = (sec < 10) ? `0${sec}` : sec
+        var mins = (min < 10) ? `0${min}` : min
+        p.textContent = `${mins} : ${secs}`
 
     }, 1000)
 
@@ -160,35 +166,52 @@ function quiz(quesNum) {
 
 }
 
+// sessionStorage.setItem("a",JSON.stringify(questions))
+
+var arr = []
+
 
 // Submit button funtion
 var subBtn = document.querySelector(".question-cont");
 subBtn.addEventListener("click", (e) => {
     if (e.target.classList.contains("btnS")) {
+        // attempt++
+        // sessionStorage.setItem("attempt", attempt)
 
         if (quesNum === (questions.length - 1)) {
 
             let inpCheck = document.querySelectorAll("input");
             Array.from(inpCheck).forEach((inp) => {
                 if (inp.checked) {
+                    var qu = { q: questions[quesNum].question, corAns: questions[quesNum].answer, userAns: inp.value }
+                    arr.push(qu)
+                    attempt++
+                    sessionStorage.setItem("attempt", attempt)
                     if (inp.value === questions[quesNum].answer) {
                         points += 10
                         sessionStorage.setItem("points", points);
                     }
                 }
             })
-            sessionStorage.setItem("timeOut",false)
-            sessionStorage.setItem("timeS",sec)
-            sessionStorage.setItem("timeM",min)
-
+            
+            sessionStorage.setItem("quizObj", JSON.stringify(arr))
+            sessionStorage.setItem("timeOut", false)
+            sessionStorage.setItem("timeS", sec)
+            sessionStorage.setItem("timeM", min)
+            
             location.href = "last.html"
             return;
         }
-
-
+        
+        
+        
         let inpCheck = document.querySelectorAll("input");
         Array.from(inpCheck).forEach((inp) => {
             if (inp.checked) {
+                var qu = { q: questions[quesNum].question, corAns: questions[quesNum].answer, userAns: inp.value }
+                arr.push(qu)
+                attempt++
+                sessionStorage.setItem("attempt", attempt)
                 if (inp.value === questions[quesNum].answer) {
                     points += 10
                     sessionStorage.setItem("points", points);
@@ -197,6 +220,7 @@ subBtn.addEventListener("click", (e) => {
             }
         })
 
+        sessionStorage.setItem("quizObj", JSON.stringify(arr))
 
         if (quesNum < questions.length) {
             var quesCont = document.querySelector(".question-cont");
@@ -207,6 +231,10 @@ subBtn.addEventListener("click", (e) => {
 
     }
 })
+
+
+
+
 
 
 
