@@ -203,6 +203,8 @@
     background: linear-gradient(to right, #29ffe2ad, #099784ad);
     color: white;
     margin: 0px auto;
+    margin-bottom: 20px;
+    outline: none;
 }
 
 .h button:hover {
@@ -225,3 +227,108 @@
 .fa-thumbs-down{
     font-size: 200px;
 }
+
+
+
+.wrappera {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    /* height: 100%; */
+    background: linear-gradient(to right, rgb(1 194 194 / 68%), rgb(0 74 96));
+    /* background: linear-gradient(to right,rgb(1 149 194 / 68%),rgb(0 74 96)); */
+    /* background: linear-gradient(to right,rgb(1, 149, 194),rgb(2, 103, 134)); */
+}
+
+.ops{
+    display: block;
+    /* width: 500px; */
+}
+
+.qum {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: block;
+    width: 800px;
+    padding: 20px;
+    /* margin-bottom: 10px; */
+    /* flex-direction: column; */
+    /* display: block !important; */
+    background-color: #fff;
+}
+
+.hhh{
+    padding: 30px;
+}
+
+.gn {
+    background-color: #5acc5a;
+}
+
+.re{
+    background-color: #ff4c4c;
+}
+
+
+
+
+@media only screen and (max-width: 850px) {
+    .main {
+      /* background-color: lightblue;
+       */
+       width: 100%;
+    }
+  }
+
+
+  @media only screen and (max-width: 560px) {
+    .main h1{
+        font-size: 20px;
+    }
+    
+    .main label{
+        font-size: 16px;
+    }
+
+    .main p{
+        font-size: 16px;
+    }
+
+    .main p{
+        font-size: 16px;
+    }
+
+
+    .btnS{
+        width: 80px;
+        /* float: right;
+        padding: 10px;*/
+        font-size: 15px;
+        /*border-radius: 25px;
+        border: 2px solid transparent;
+        background-color: rgb(0, 158, 185);
+        color: white; */
+    }
+    
+    .qum {
+        width: 95%;
+    }
+
+    .qum h1{
+        font-size: 20px;
+    }
+    
+    .qun label{
+        font-size: 16px;
+    }
+
+    .qum p{
+        font-size: 16px;
+    }
+
+
+    
+  }
